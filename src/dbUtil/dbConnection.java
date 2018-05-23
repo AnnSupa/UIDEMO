@@ -10,7 +10,7 @@ public class dbConnection {
 
     public static Connection getConnection() throws SQLException {
         try {
-            Class.forName("ort.sqlite.JDBC");
+            Class.forName("org.sqlite.JDBC");
             return DriverManager.getConnection(SQCONN);
 
 

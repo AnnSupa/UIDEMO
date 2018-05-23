@@ -1,25 +1,32 @@
 package adminDashBoard;
 
-import javafx.beans.property.DoubleProperty;
-import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class Employee {
-    private final IntegerProperty id;
+    private final StringProperty id;
     private final StringProperty name;
     private final StringProperty position;
     private final StringProperty email;
-    private final DoubleProperty salary;
+    private final StringProperty salary;
 
-    public int getId() {
+    public Employee(String id, String name, String position, String email, String salary) {
+        this.id = new SimpleStringProperty(id);
+        this.name = new SimpleStringProperty (name);
+        this.position = new SimpleStringProperty (position);
+        this.email = new SimpleStringProperty (email);
+        this.salary = new SimpleStringProperty (salary);
+    }
+
+    public String getId() {
         return id.get();
     }
 
-    public IntegerProperty idProperty() {
+    public StringProperty idProperty() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id.set(id);
     }
 
@@ -59,25 +66,15 @@ public class Employee {
         this.email.set(email);
     }
 
-    public double getSalary() {
+    public String getSalary() {
         return salary.get();
     }
 
-    public DoubleProperty salaryProperty() {
+    public StringProperty salaryProperty() {
         return salary;
     }
 
-    public void setSalary(double salary) {
+    public void setSalary(String salary) {
         this.salary.set(salary);
     }
-
-    public Employee(IntegerProperty id, StringProperty name, StringProperty position, StringProperty email, DoubleProperty salary) {
-
-        this.id = id;
-        this.name = name;
-        this.position = position;
-        this.email = email;
-        this.salary = salary;
-    }
 }
-
